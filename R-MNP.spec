@@ -4,7 +4,7 @@
 #
 Name     : R-MNP
 Version  : 3.1.0
-Release  : 15
+Release  : 16
 URL      : https://cran.r-project.org/src/contrib/MNP_3.1-0.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/MNP_3.1-0.tar.gz
 Summary  : R Package for Fitting the Multinomial Probit Model

@@ -4,7 +4,7 @@
 #
 Name     : R-MNP
 Version  : 3.1.0
-Release  : 16
+Release  : 17
 URL      : https://cran.r-project.org/src/contrib/MNP_3.1-0.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/MNP_3.1-0.tar.gz
 Summary  : R Package for Fitting the Multinomial Probit Model
@@ -12,7 +12,6 @@ Group    : Development/Tools
 License  : GPL-2.0+
 Requires: R-MNP-lib = %{version}-%{release}
 BuildRequires : buildreq-R
-BuildRequires : util-linux
 
 %description
 Monte Carlo.  The multinomial probit model is often used to analyze 
@@ -38,21 +37,22 @@ lib components for the R-MNP package.
 
 %prep
 %setup -q -c -n MNP
+cd %{_builddir}/MNP
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1571867917
+export SOURCE_DATE_EPOCH=1589521422
 
 %install
-export SOURCE_DATE_EPOCH=1571867917
+export SOURCE_DATE_EPOCH=1589521422
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
+export FCFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
+export FFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
 export CXXFLAGS="$CXXFLAGS -O3 -flto -fno-semantic-interposition "
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
